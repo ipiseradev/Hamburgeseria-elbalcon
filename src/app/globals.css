@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+@theme {
+  --color-charcoal: #15110e;
+  --color-charcoal-soft: #1f1912;
+  --color-charcoal-line: #2d2419;
+  --color-cream: #f6ede1;
+  --color-cream-dim: #e9dcc8;
+  --color-gold: #d9a441;
+  --color-gold-bright: #f0c05f;
+  --color-cheddar: #e8902c;
+  --color-ember: #c2451c;
+
+  --font-display: "Anton", "Arial Narrow", sans-serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+
+  --animate-fade-up: fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background-color: var(--color-charcoal);
+  color: var(--color-cream);
+  font-family: var(--font-sans);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-gold-bright);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
